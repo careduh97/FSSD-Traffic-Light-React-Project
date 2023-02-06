@@ -5,6 +5,9 @@ import { useState } from 'react';
 export function TrafficLightContainer () {
     const [colorOn, setColorOn] = useState("");
     const colors = ["red", "yellow", "green"];
+    function randomColor () {
+        return colors[Math.floor(Math.random()*colors.length)]
+    }
     return (
         <React.Fragment>
             <div className="lightContainer bg-dark">
@@ -25,7 +28,7 @@ export function TrafficLightContainer () {
                 <button 
                     type="button" 
                     className="btn btn-info text-center" 
-                    onClick={() => {return setColorOn(colors[Math.floor(Math.random()*colors.length)])}}>
+                    onClick={() => {return setColorOn(randomColor)}}>
                         Random Color
                 </button>
             </div>
